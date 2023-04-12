@@ -12,7 +12,10 @@
     
 ## Calculator Look like :
 
-    ![Screenshot_of_Calculator](https://raw.githubusercontent.com/ashiqu-ali/Simple-Calculator/main/Scrrenshot.png)
+   ![Screenshot_of_Calculator](https://raw.githubusercontent.com/ashiqu-ali/Simple-Calculator/main/Scrrenshot.png)
+    
+    
+  
     
 
  
