@@ -173,17 +173,14 @@ public class Calculator implements ActionListener {
             if (opr) {
                 displayLabel.setText("8");
                 opr = false;
-
             } else {
                 displayLabel.setText(displayLabel.getText() + "8");
-
             }
 
         } else if (e.getSource() == nineB) {
             if (opr) {
                 displayLabel.setText("9");
                 opr = false;
-
             } else {
                 displayLabel.setText(displayLabel.getText() + "9");
 
@@ -206,7 +203,6 @@ public class Calculator implements ActionListener {
                 displayLabel.setText(displayLabel.getText() + "2");
 
             }
-
         } else if (e.getSource() == threeB) {
             if (opr) {
                 displayLabel.setText("3");
@@ -268,63 +264,45 @@ public class Calculator implements ActionListener {
         } else if (e.getSource() == plusB) {
             opr = true;
             old = displayLabel.getText();
-            a[i++] = Float.parseFloat(old);
-            System.out.println(a[i - 1] + "\n" + i);
-            if (i > 1) {
-                a[0] += a[1];
-
-                i = 0;
-            }
+            x = 1;
+            a[i] = Float.parseFloat(old);
+            i = i + 1;
 
         } else if (e.getSource() == minB) {
             opr = true;
             old = displayLabel.getText();
             x = 2;
             a[i++] = Float.parseFloat(old);
-            if (i > 1) {
-                a[0] -= a[1];
-                i = 0;
-            }
 
         } else if (e.getSource() == divB) {
             opr = true;
             old = displayLabel.getText();
             x = 4;
             a[i++] = Float.parseFloat(old);
-            if (i > 1) {
-                a[0] /= a[1];
-                i = 0;
-            }
 
         } else if (e.getSource() == mulB) {
             opr = true;
             old = displayLabel.getText();
             x = 3;
             a[i++] = Float.parseFloat(old);
-            if (i > 1) {
-                a[0] *= a[1];
-                i = 0;
-            }
 
         } else if (e.getSource() == equalB) {
-            old = displayLabel.getText();
-            a[i++] = Float.parseFloat(old);
-            System.out.println(i);
-
+            a[1] = Float.parseFloat(displayLabel.getText());
             if (x == 1) {
                 a[0] += a[1];
+                i = 0;
 
             } else if (x == 2) {
                 a[0] -= a[1];
             } else if (x == 3) {
                 a[0] *= a[1];
-            } else if (x == 3) {
+            } else if (x == 4) {
                 a[0] /= a[1];
             }
+            i = 1;
+            x = 0;
 
             displayLabel.setText(a[0] + "");
-            a[1] = a[0] = 0;
-            i = 0;
 
         } else if (e.getSource() == clearB) {
             displayLabel.setText("");
